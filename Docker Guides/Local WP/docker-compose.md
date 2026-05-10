@@ -78,6 +78,10 @@ Windows:
 
 docker exec databasetest-db-1 mysqldump -u root -prootexamplepass --single-transaction --quick --lock-tables=false testexampledata > backups/wordpress.sql
 
+Using service name: (Service being: databasetest-db-1 -> service name: db )
+
+docker compose exec db mysqldump -u root -prootexamplepass testexampledata > backups/site.sql
+
 # Import a database
 
 docker exec -i <mysql container name> mysql \
