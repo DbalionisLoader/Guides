@@ -18,7 +18,7 @@ When creating a new site from the same Compose file, change:
 - [ ] WordPress host port, e.g. 8081:80 to 8082:80
 - [ ] phpMyAdmin host port, e.g. 8082:80 to 8083:80, if running multiple phpMyAdmin containers
 - [ ] WORDPRESS_DB_NAME, MYSQL_DATABASE to unique database name per project (as match the db name from live site)
-- [ ]Optional: Compose project name using docker compose -p unique_name up -d (prefix with unique name incase folder have the same names)
+- [ ] Optional: Compose project name using docker compose -p unique_name up -d (prefix with unique name incase folder have the same names)
 
 Do not change:
 
@@ -42,23 +42,49 @@ These can stay same or be changed:
 
 Look into Traefik, Caddy, or Nginx Proxy Manager to replace localhost:8080 with local domains
 
-# Docker Commands
+## Docker container commands
 
-**Start docker containers:**
+### Start containers
 
+Starts the WordPress, database, WP-CLI, and phpMyAdmin containers in the background.
+
+```bash
 docker compose up -d
+```
 
-**Shutdown Containers:**
+### Stop containers
+
+Stops and removes the containers, but keeps your Docker volumes and data.
+
+```bash
 docker compose down
+```
 
-Reset and delete everything:
+### Reset everything
+
+Stops containers and deletes the project’s named volumes, including the database and WordPress volume.
+
+**Warning:** this deletes local Docker volume data.
+
+```bash
 docker compose down -v
+```
 
-Show running containers:
+### Show running containers for this project
+
+Shows containers from the current Compose project.
+
+```bash
 docker compose ps
+```
 
-Show all docker containers:
+### Show all running Docker containers
+
+Shows all running containers on your machine.
+
+```bash
 docker ps
+```
 
 ## SQL Import/Export commands
 
