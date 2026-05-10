@@ -44,9 +44,15 @@ Look into Traefik, Caddy, or Nginx Proxy Manager to replace localhost:8080 with 
 
 ## Docker container commands
 
-### Start containers
+| Task                        | What it does                               |
+| --------------------------- | ------------------------------------------ |
+| **Start containers**        | Starts the project in the background       |
+| **Stop containers**         | Stops containers but keeps volumes/data    |
+| **Reset everything**        | Stops containers and deletes named volumes |
+| **Show project containers** | Shows containers for this Compose project  |
+| **Show all containers**     | Shows all running Docker containers        |
 
-Starts the WordPress, database, WP-CLI, and phpMyAdmin containers in the background.
+### Start containers
 
 ```bash
 docker compose up -d
@@ -54,33 +60,25 @@ docker compose up -d
 
 ### Stop containers
 
-Stops and removes the containers, but keeps your Docker volumes and data.
-
 ```bash
 docker compose down
 ```
 
 ### Reset everything
 
-Stops containers and deletes the project’s named volumes, including the database and WordPress volume.
-
-**Warning:** this deletes local Docker volume data.
+**Warning:** deletes named volumes, including database data.
 
 ```bash
 docker compose down -v
 ```
 
-### Show running containers for this project
-
-Shows containers from the current Compose project.
+### Show project containers
 
 ```bash
 docker compose ps
 ```
 
-### Show all running Docker containers
-
-Shows all running containers on your machine.
+### Show all containers
 
 ```bash
 docker ps
