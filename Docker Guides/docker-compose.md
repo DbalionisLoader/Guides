@@ -36,7 +36,7 @@ These can stay same or be changed:
 [ ] MYSQL_USER
 [ ] WORDPRESS_DB_PASSWORD
 [ ] MYSQL_PASSWORD
-[ ]MYSQL_ROOT_PASSWORD
+[ ] MYSQL_ROOT_PASSWORD
 
 # Future Additions
 
