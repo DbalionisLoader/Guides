@@ -44,9 +44,11 @@ Look into Traefik, Caddy, or Nginx Proxy Manager to replace localhost:8080 with 
 
 # Docker Commands
 
-Start:
+**Start docker containers:**
+
 docker compose up -d
-End:
+
+**Shutdown Containers:**
 docker compose down
 
 Reset and delete everything:
