@@ -24,9 +24,10 @@ docker compose exec -T "$CONTAINER" \
 
  if [ $? -eq 0 ]; then
 	mv "$TMP_FILE" "$DUMP_FILE"
-	echo "Dump updated: $DUMP_FILE"
+	echo "Dump updated: $(date) $DUMP_FILE"
+	exit 0
 else
 	rm -f "$TMP_FILE"
-	echo "Dump Failed"
+	echo "Dump Failed - check folder path, docker command, sql permissions or sql details match containers"
 	exit 1
 fi	
